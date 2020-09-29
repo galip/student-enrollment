@@ -3,14 +3,12 @@ package com.student.test;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
 
-import com.domain.exception.TakenCreditsExceedAvailableCreditsLimitException;
 import com.lecture.domain.Lecture;
 import com.lecture.domain.Lectures;
 import com.student.domain.JuniorStudent;
