@@ -1,4 +1,4 @@
-package com.enrolling.test;
+package com.enrollment.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.domain.enrolling.EnrollingService;
+import com.domain.enrollment.EnrollmentService;
 import com.domain.exception.DifferentNumberOfLecturesExceedLimitException;
 import com.domain.exception.TakenCreditsExceedAvailableCreditsLimitException;
 import com.lecture.domain.Lecture;
@@ -26,11 +26,11 @@ import com.student.domain.StudentService;
 import com.student.domain.StudentServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
-public class EnrollingServiceTest {
+public class EnrollmentServiceTest {
 
 	private StudentService studentService = new StudentServiceImpl();
 
-	private EnrollingService enrollingService;
+	private EnrollmentService enrollmentService;
 
 	private static final Lecture JAVA = Lectures.JAVA.getValue();
 	private static final Lecture LOGIC_CIRCUITS = Lectures.LOGIC_CIRCUITS.getValue();
@@ -100,11 +100,11 @@ public class EnrollingServiceTest {
 			throws Exception {
 		LectureService lectureService = Mockito.mock(LectureService.class);
 		Student juniorStudent = new JuniorStudent(1, "Galip");
-		enrollingService = new EnrollingService(studentService, lectureService);
+		enrollmentService = new EnrollmentService(studentService, lectureService);
 		
 		when(lectureService.getRandomLectures(any())).thenReturn(MOCKLECTURES_25_CREDITS);
 
-		enrollingService.enrollLectures(juniorStudent, EXISTED_LECTURES);
+		enrollmentService.enrollLectures(juniorStudent, EXISTED_LECTURES);
 	}
 	
 	/**
@@ -115,11 +115,11 @@ public class EnrollingServiceTest {
 	public void shouldReturnTrue_whenJuniorAddsMoreThanAvailableLectures() throws Exception {
 		LectureService lectureService = Mockito.mock(LectureService.class);
 		Student juniorStudent = new JuniorStudent(1, "Galip");
-		enrollingService = new EnrollingService(studentService, lectureService);
+		enrollmentService = new EnrollmentService(studentService, lectureService);
 		
 		when(lectureService.getRandomLectures(any())).thenReturn(MOCKLECTURES_7_DIFFERENT_LECTURES);
 		
-		enrollingService.enrollLectures(juniorStudent, EXISTED_LECTURES);
+		enrollmentService.enrollLectures(juniorStudent, EXISTED_LECTURES);
 		
 	}
 	
@@ -132,11 +132,11 @@ public class EnrollingServiceTest {
 			throws Exception {
 		LectureService lectureService = Mockito.mock(LectureService.class);
 		Student seniorStudent = new SeniorStudent(1, "Joshua");
-		enrollingService = new EnrollingService(studentService, lectureService);
+		enrollmentService = new EnrollmentService(studentService, lectureService);
 		
 		when(lectureService.getRandomLectures(any())).thenReturn(MOCKLECTURES_27_CREDITS);
 
-		enrollingService.enrollLectures(seniorStudent, EXISTED_LECTURES);
+		enrollmentService.enrollLectures(seniorStudent, EXISTED_LECTURES);
 	}
 	
 	/**
@@ -148,11 +148,11 @@ public class EnrollingServiceTest {
 	public void shouldDifferentNumberOfLecturesExceedLimitException_whenSeniorAddsMoreThanAvailableLectures() throws Exception {
 		LectureService lectureService = Mockito.mock(LectureService.class);
 		Student seniorStudent = new SeniorStudent(1, "Joshua");
-		enrollingService = new EnrollingService(studentService, lectureService);
+		enrollmentService = new EnrollmentService(studentService, lectureService);
 		
 		when(lectureService.getRandomLectures(any())).thenReturn(MOCKLECTURES_7_DIFFERENT_LECTURES);
 		
-		enrollingService.enrollLectures(seniorStudent, EXISTED_LECTURES);
+		enrollmentService.enrollLectures(seniorStudent, EXISTED_LECTURES);
 		
 	}
 	
@@ -165,13 +165,13 @@ public class EnrollingServiceTest {
 		LectureService lectureService = Mockito.mock(LectureService.class);
 		StudentService studentService = Mockito.mock(StudentService.class);
 		Student juniorStudent = new JuniorStudent(1, "Galip");
-		enrollingService = new EnrollingService(studentService, lectureService);
+		enrollmentService = new EnrollmentService(studentService, lectureService);
 		
 		when(lectureService.getRandomLectures(any())).thenReturn(MOCKLECTURES_20_CREDITS);
 		when(studentService.checkAvailableCreditsWithTakenCredits(any(), any())).thenReturn(true);
 		when(studentService.checkNumberOfLecturesLimitByStudent(any(), any())).thenReturn(true);
 		
-		enrollingService.enrollLectures(juniorStudent, EXISTED_LECTURES);
+		enrollmentService.enrollLectures(juniorStudent, EXISTED_LECTURES);
 		
 		assertThat(MOCKLECTURES_20_CREDITS).isEqualTo(juniorStudent.getLectures());
 	}
@@ -181,13 +181,13 @@ public class EnrollingServiceTest {
 		LectureService lectureService = Mockito.mock(LectureService.class);
 		StudentService studentService = Mockito.mock(StudentService.class);
 		Student seniorStudent = new SeniorStudent(1, "Joshua");
-		enrollingService = new EnrollingService(studentService, lectureService);
+		enrollmentService = new EnrollmentService(studentService, lectureService);
 		
 		when(lectureService.getRandomLectures(any())).thenReturn(MOCKLECTURES_25_CREDITS);
 		when(studentService.checkAvailableCreditsWithTakenCredits(any(), any())).thenReturn(true);
 		when(studentService.checkNumberOfLecturesLimitByStudent(any(), any())).thenReturn(true);
 		
-		enrollingService.enrollLectures(seniorStudent, EXISTED_LECTURES);
+		enrollmentService.enrollLectures(seniorStudent, EXISTED_LECTURES);
 		
 		assertThat(MOCKLECTURES_25_CREDITS).isEqualTo(seniorStudent.getLectures());
 	}

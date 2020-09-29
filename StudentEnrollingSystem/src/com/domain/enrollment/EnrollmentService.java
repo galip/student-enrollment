@@ -1,4 +1,4 @@
-package com.domain.enrolling;
+package com.domain.enrollment;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -10,12 +10,12 @@ import com.lecture.domain.LectureService;
 import com.student.domain.Student;
 import com.student.domain.StudentService;
 
-public class EnrollingService {
+public class EnrollmentService {
 
 	private StudentService studentService;
 	private LectureService lectureService;
 
-	public EnrollingService(StudentService studentService, LectureService lectureService) {
+	public EnrollmentService(StudentService studentService, LectureService lectureService) {
 		super();
 		this.studentService = studentService;
 		this.lectureService = lectureService;

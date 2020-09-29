@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
 
-import com.domain.enrolling.EnrollingService;
+import com.domain.enrollment.EnrollmentService;
 import com.lecture.domain.Lecture;
 import com.lecture.domain.LectureService;
 import com.lecture.domain.LectureServiceImpl;
@@ -16,7 +16,7 @@ import com.student.domain.Student;
 import com.student.domain.StudentService;
 import com.student.domain.StudentServiceImpl;
 
-public class StudentEnrollmentApplication {
+public class EnrollmentApplication {
 
 	private static final Lecture JAVA = Lectures.JAVA.getValue();
 	private static final Lecture LOGIC_CIRCUITS = Lectures.LOGIC_CIRCUITS.getValue();
@@ -31,11 +31,11 @@ public class StudentEnrollmentApplication {
 
 	StudentService studentService = new StudentServiceImpl();
 	LectureService lectureService = new LectureServiceImpl();
-	EnrollingService enrollingService = new EnrollingService(studentService, lectureService);
+	EnrollmentService enrollmentService = new EnrollmentService(studentService, lectureService);
 
 	public static void main(String args[]) throws Exception {
 
-		StudentEnrollmentApplication app = new StudentEnrollmentApplication();
+		EnrollmentApplication app = new EnrollmentApplication();
 
 		List<Lecture> existedLectures = createLectures();
 
@@ -85,7 +85,7 @@ public class StudentEnrollmentApplication {
 
 	public void enrollLectureToStudent(Student student, List<Lecture> existedLectures) throws Exception {
 
-		enrollingService.enrollLectures(student, existedLectures);
+		enrollmentService.enrollLectures(student, existedLectures);
 
 		System.out.println("Lectures are added successfully!");
 		System.out.println("Student name : " + student.getStudentName() + " Level: " + student.getLevel());
