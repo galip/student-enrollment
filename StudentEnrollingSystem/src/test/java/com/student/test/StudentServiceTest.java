@@ -9,8 +9,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.lecture.domain.Lecture;
-import com.lecture.domain.Lectures;
+import com.domain.lecture.Lecture;
+import com.domain.lecture.Lectures;
 import com.student.domain.JuniorStudent;
 import com.student.domain.SeniorStudent;
 import com.student.domain.Student;

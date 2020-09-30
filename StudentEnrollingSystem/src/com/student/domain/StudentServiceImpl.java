@@ -9,7 +9,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import com.lecture.domain.Lecture;
+import com.domain.lecture.Lecture;
 
 public class StudentServiceImpl implements StudentService {
 

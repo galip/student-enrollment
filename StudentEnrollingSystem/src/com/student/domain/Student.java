@@ -3,7 +3,7 @@ package com.student.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lecture.domain.Lecture;
+import com.domain.lecture.Lecture;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

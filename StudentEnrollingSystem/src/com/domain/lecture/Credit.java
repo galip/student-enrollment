@@ -1,18 +1,6 @@
-package com.credit.domain;
+package com.domain.lecture;
 
-public enum CREDIT {
-	
-	/**
-	 * Max. available credit for levels.
-	 */
-	JUNIOR_MAX_CREDIT(20), 
-	SENIOR_MAX_CREDIT(25),
-	
-	/**
-	 * Max. number of different lectures for student levels.
-	 */
-	JUNIOR_MAX_DIFFERENT_LECTURES_NUMBERS(5),
-	SENIOR_MAX_DIFFERENT_LECTURES_NUMBERS(6),
+public enum Credit {
 
 	/**
 	 * Credits of each lectures.
@@ -30,7 +18,7 @@ public enum CREDIT {
 
 	private final int credit;
 
-	CREDIT(int credit) {
+	Credit(int credit) {
 		this.credit = credit;
 	}
 
