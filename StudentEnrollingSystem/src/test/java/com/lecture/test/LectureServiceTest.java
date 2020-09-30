@@ -8,10 +8,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.lecture.domain.Lecture;
-import com.lecture.domain.LectureService;
-import com.lecture.domain.LectureServiceImpl;
-import com.lecture.domain.Lectures;
+import com.domain.lecture.Lecture;
+import com.domain.lecture.LectureService;
+import com.domain.lecture.LectureServiceImpl;
+import com.domain.lecture.Lectures;
 
 public class LectureServiceTest {
 

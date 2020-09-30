@@ -1,4 +1,4 @@
-package constants;
+package com.domain.constants;
 
 public final class Constant {
 	

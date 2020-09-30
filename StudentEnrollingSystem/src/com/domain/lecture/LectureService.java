@@ -1,4 +1,4 @@
-package com.lecture.domain;
+package com.domain.lecture;
 
 import java.util.List;
 

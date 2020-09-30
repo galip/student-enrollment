@@ -5,8 +5,8 @@ import java.util.function.Consumer;
 
 import com.domain.exception.DifferentNumberOfLecturesExceedLimitException;
 import com.domain.exception.TakenCreditsExceedAvailableCreditsLimitException;
-import com.lecture.domain.Lecture;
-import com.lecture.domain.LectureService;
+import com.domain.lecture.Lecture;
+import com.domain.lecture.LectureService;
 import com.student.domain.Student;
 import com.student.domain.StudentService;
 

@@ -6,10 +6,10 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 import com.domain.enrollment.EnrollmentService;
-import com.lecture.domain.Lecture;
-import com.lecture.domain.LectureService;
-import com.lecture.domain.LectureServiceImpl;
-import com.lecture.domain.Lectures;
+import com.domain.lecture.Lecture;
+import com.domain.lecture.LectureService;
+import com.domain.lecture.LectureServiceImpl;
+import com.domain.lecture.Lectures;
 import com.student.domain.JuniorStudent;
 import com.student.domain.SeniorStudent;
 import com.student.domain.Student;
