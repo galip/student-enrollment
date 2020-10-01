@@ -1,4 +1,4 @@
-package com.student.domain;
+package com.domain.student;
 
 import java.util.ArrayList;
 import java.util.List;

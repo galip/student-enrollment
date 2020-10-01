@@ -19,11 +19,11 @@ import com.domain.exception.TakenCreditsExceedAvailableCreditsLimitException;
 import com.domain.lecture.Lecture;
 import com.domain.lecture.LectureService;
 import com.domain.lecture.Lectures;
-import com.student.domain.JuniorStudent;
-import com.student.domain.SeniorStudent;
-import com.student.domain.Student;
-import com.student.domain.StudentService;
-import com.student.domain.StudentServiceImpl;
+import com.domain.student.JuniorStudent;
+import com.domain.student.SeniorStudent;
+import com.domain.student.Student;
+import com.domain.student.StudentService;
+import com.domain.student.StudentServiceImpl;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EnrollmentServiceTest {

@@ -1,6 +1,7 @@
 package com.domain.application;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.function.Consumer;
@@ -10,11 +11,11 @@ import com.domain.lecture.Lecture;
 import com.domain.lecture.LectureService;
 import com.domain.lecture.LectureServiceImpl;
 import com.domain.lecture.Lectures;
-import com.student.domain.JuniorStudent;
-import com.student.domain.SeniorStudent;
-import com.student.domain.Student;
-import com.student.domain.StudentService;
-import com.student.domain.StudentServiceImpl;
+import com.domain.student.JuniorStudent;
+import com.domain.student.SeniorStudent;
+import com.domain.student.Student;
+import com.domain.student.StudentService;
+import com.domain.student.StudentServiceImpl;
 
 public class EnrollmentApplication {
 
@@ -90,7 +91,7 @@ public class EnrollmentApplication {
 		System.out.println("Lectures are added successfully!");
 		System.out.println("Student name : " + student.getStudentName() + " Level: " + student.getLevel());
 
-		Consumer<List<Lecture>> lectureListPrint = list -> list.stream().forEach(l -> System.out
+		Consumer<List<Lecture>> lectureListPrint = list -> list.stream().sorted(Comparator.comparingInt(Lecture::getLectureId)).forEach(l -> System.out
 				.println("Lecture Id: " + l.getLectureId() + ", Name: " + l.getName() + ", Credit: " + l.getCredit()));
 
 		lectureListPrint.accept(student.getLectures());

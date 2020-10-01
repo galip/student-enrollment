@@ -1,4 +1,4 @@
-package com.student.domain;
+package com.domain.student;
 
 import java.util.Collections;
 import java.util.List;

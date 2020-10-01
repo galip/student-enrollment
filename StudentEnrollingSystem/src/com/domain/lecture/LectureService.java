@@ -2,7 +2,7 @@ package com.domain.lecture;
 
 import java.util.List;
 
-import com.student.domain.Student;
+import com.domain.student.Student;
 
 public interface LectureService {
 	public long getLecturesWithMoreThanGivenCredit(List<Lecture> lectures, int credit);

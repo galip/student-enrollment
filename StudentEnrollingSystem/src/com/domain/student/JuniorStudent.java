@@ -1,4 +1,4 @@
-package com.student.domain;
+package com.domain.student;
 
 public class JuniorStudent extends Student {
 	

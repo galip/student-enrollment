@@ -7,8 +7,8 @@ import com.domain.exception.DifferentNumberOfLecturesExceedLimitException;
 import com.domain.exception.TakenCreditsExceedAvailableCreditsLimitException;
 import com.domain.lecture.Lecture;
 import com.domain.lecture.LectureService;
-import com.student.domain.Student;
-import com.student.domain.StudentService;
+import com.domain.student.Student;
+import com.domain.student.StudentService;
 
 public class EnrollmentService {
 
